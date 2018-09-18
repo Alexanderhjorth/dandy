@@ -2,17 +2,53 @@
 <html lang="en">
 
 <head>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <title>Dandy's Juicy Burger</title>
     <style>
         body {
-            background-color: lightgreen;
-
+            border: 50px solid #FBF7F1;
+            background-color: #FBF7F1;
         }
 
-        nav {
+        .logo {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding-bottom: 5%;
+        }
+
+        .logo img {
+            width: 300px;
+            grid-column: 2/3;
+        }
+
+        .banner {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .banner a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
             text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .banner a:hover {
+            background-color: #FBF7F1;
+            color: black;
+        }
+
+        .active {
+            background-color: #F90808;
+            color: white;
+        }
+
+        .banner .icon {
+            display: none;
         }
 
         article {
@@ -27,24 +63,11 @@
         .data-container {
             margin: 0 auto;
             display: grid;
-        }
+            grid-gap: 10px;
 
-        .banner img {
-            width: 100%;
-        }
-
-        .banner {
-
-            text-align: center;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
         }
 
         @media screen and (min-width:600px) {
-
-            .banner {
-                font-size: 2em;
-            }
 
             .data-container {
                 padding-left: 10%;
@@ -53,34 +76,55 @@
 
             }
         }
-        @media screen and (min-width:1000px) {
-            .banner {
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+        @media screen and (max-width: 600px) {
+            .banner a:not(:first-child) {
+                display: none;
             }
-            .banner h1 {
-                grid-column: 3;
-            }
-            .banner .img2 {
-                grid-column: 5;
+
+            .banner a.icon {
+                float: right;
+                display: block;
             }
         }
-        @media screen and (min-width:1200px) {
-            .banner {
-                font-size: 3em;
+
+        @media screen and (max-width: 600px) {
+            .banner.responsive {
+                position: relative;
+            }
+
+            .banner.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .banner.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
             }
         }
     </style>
 </head>
 
 <body>
-   <div class="banner">
-        <img src="img/logo.png" alt="logo">
-        <h1>Dandy's <br> Juicy Burger</h1>
-        <div class="img2">
-            <img src="img/logo.png" alt="logo">
-        </div>
+    <div class="logo"><img src="img/logo.png" alt="logo">
+    </div>
 
+
+    <div class="banner" id="myBanner">
+        <a href="#home" class="active">Hjem</a>
+
+        <a href="#helemenuen" class="menu-item" data-kategori="alle">Hele menuen</a>
+        <a href="#burger" class="menu-item" data-kategori="Burger">Burger</a>
+        <a href="#pommesfrites" class="menu-item" data-kategori="Pommes frites">Pommes frites</a>
+        <a href="#milkshakes" class="menu-item" data-kategori="Milkshakes">Milkshakes</a>
+        <a href="#drinks" class="menu-item" data-kategori="Drinks">Drinks</a>
+        <a href="#dip" class="menu-item" data-kategori="Dip">Dip</a>
+        <a href="javascript:void(0);" class="icon" onclick="bannerFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
 
     <main class="container">
@@ -104,6 +148,15 @@
         let maden;
         document.addEventListener("DOMContentLoaded", hentJson);
 
+        function bannerFunction() {
+            var x = document.getElementById("myBanner");
+            if (x.className === "banner") {
+                x.className += " responsive";
+            } else {
+                x.className = "banner";
+            }
+        }
+
         async function hentJson() {
             let myJson = await fetch("dandymenu.json");
             maden = await myJson.json();
@@ -113,22 +166,21 @@
         function visMad() {
             let dest = document.querySelector(".data-container");
 
-                //løb personlisten igennem og lav en klon
-                maden.forEach(mad => {
-                    if (mad.id == id) {
+            //løb personlisten igennem og lav en klon
+            maden.forEach(mad => {
+                if (mad.id == id) {
 
-                        //indsæt data i klonen
-                        dest.querySelector("h2").textContent = mad.navn;
-                        dest.querySelector("img").src = mad.billede;
-                        dest.querySelector(".data-kategori").textContent = mad.kategori;
-                        dest.querySelector(".data-beskrivelse").textContent = mad.beskrivelse;
-                        dest.querySelector(".data-pris").textContent = mad.pris;
-                        //placer klon i DOM
+                    //indsæt data i klonen
+                    dest.querySelector("h2").textContent = mad.navn;
+                    dest.querySelector("img").src = mad.billede;
+                    dest.querySelector(".data-kategori").textContent = mad.kategori;
+                    dest.querySelector(".data-beskrivelse").textContent = mad.beskrivelse;
+                    dest.querySelector(".data-pris").textContent = mad.pris;
+                    //placer klon i DOM
 
-                    }
-                });
+                }
+            });
         }
-
     </script>
 </body>
 

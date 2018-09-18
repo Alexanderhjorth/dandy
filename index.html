@@ -1,15 +1,54 @@
 <!DOCTYPE html>
 <html lang="da">
-<head>
 
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Dandy's Juicy Burger</title>
     <style>
         body {
             border: 50px solid #FBF7F1;
-            background-color: white;
+            background-color: #FBF7F1;
         }
 
+        .logo {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding-bottom: 5%;
+        }
+        .logo img {
+            width: 300px;
+            grid-column: 2/3;
+        }
+
+        .banner {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        .banner a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .banner a:hover {
+            background-color: #FBF7F1;
+            color: black;
+        }
+
+        .active {
+            background-color: #F90808;
+            color: white;
+        }
+
+        .banner .icon {
+            display: none;
+        }
 
         article {
             padding: 1em;
@@ -27,40 +66,47 @@
 
         }
 
-        .banner img {
-            width: 50%;
-            grid-column: 1;
-        }
-
-        .banner nav {
-            grid-column: 2/4;
-            text-align: right;
-        }
-
-        .banner nav button {
-            background-color: red;
-            font-size: 1.em;
-            font-weight: 600;
-            border-radius: 50%;
-            width: 120px;
-            height: 50px;
-        }
-
-        .banner {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-        }
 
         .mad {
-            background-color: #FBF7F1;
+            background-color: #333;
         }
+
+        @media screen and (max-width: 600px) {
+            .banner a:not(:first-child) {
+                display: none;
+            }
+
+            .banner a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .banner.responsive {
+                position: relative;
+            }
+
+            .banner.responsive a.icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .banner.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+
 
         @media screen and (min-width:600px) {
 
 
             .data-container {
-                padding-left: 10%;
-                padding-right: 10%;
+                padding: 10%;
+
                 grid-template-columns: repeat(3, 1fr);
             }
         }
@@ -77,16 +123,22 @@
 </head>
 
 <body>
-    <div class="banner">
-        <img src="img/logo.png" alt="logo">
-        <nav>
-            <button class="menu-item" data-kategori="alle">Hele menuen</button>
-            <button class="menu-item" data-kategori="Burger">Burger</button>
-            <button class="menu-item" data-kategori="Pommes frites">Pommes frites</button>
-            <button class="menu-item" data-kategori="Milkshakes">Milkshakes</button>
-            <button class="menu-item" data-kategori="Drinks">Drinks</button>
-            <button class="menu-item" data-kategori="Dip">Dip</button>
-        </nav>
+    <div class="logo"><img src="img/logo.png" alt="logo">
+    </div>
+
+
+    <div class="banner" id="myBanner">
+        <a href="#home" class="active">Hjem</a>
+
+        <a href="#helemenuen" class="menu-item" data-kategori="alle">Hele menuen</a>
+        <a href="#burger" class="menu-item" data-kategori="Burger">Burger</a>
+        <a href="#pommesfrites" class="menu-item" data-kategori="Pommes frites">Pommes frites</a>
+        <a href="#milkshakes" class="menu-item" data-kategori="Milkshakes">Milkshakes</a>
+        <a href="#drinks" class="menu-item" data-kategori="Drinks">Drinks</a>
+        <a href="#dip" class="menu-item" data-kategori="Dip">Dip</a>
+        <a href="javascript:void(0);" class="icon" onclick="bannerFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
     </div>
 
     <main class="container">
@@ -106,6 +158,15 @@
         let mad;
         let madFilter = "alle";
         document.addEventListener("DOMContentLoaded", hentJson);
+
+        function bannerFunction() {
+            var x = document.getElementById("myBanner");
+            if (x.className === "banner") {
+                x.className += " responsive";
+            } else {
+                x.className = "banner";
+            }
+        }
 
         async function hentJson() {
             let myJson = await fetch("dandymenu.json");
@@ -145,4 +206,5 @@
         }
     </script>
 </body>
+
 </html>
