@@ -1,186 +1,186 @@
 [
-  {
-    "id": 1,
-    "kategori": "Pommes frites",
-    "navn": "Classic fries",
-    "pris": "25 kr.",
-    "beskrivelse": "Friture stegte danske kartofler.",
-    "billede": "img/pommes-frites.jpg"
-  },
-  {
-    "id": 2,
-    "kategori": "Pommes frites",
-    "navn": "Sweet potato fries",
-    "pris": "30 kr.",
-    "beskrivelse": "Tyndt skåret fritter af afrikanske søde kartofler.",
-    "billede": "img/sweet-potato-fries.jpg"
-  },
-  {
-    "id": 3,
-    "kategori": "Pommes frites",
-    "navn": "Curly fries",
-    "pris": "30 kr.",
-    "beskrivelse": "Lækre curly fries med paprika.",
-    "billede": "img/curly-fries.jpg"
-  },
-  {
-    "id": 4,
-    "kategori": "Pommes frites",
-    "navn": "Cheese fries",
-    "pris": "30 kr.",
-    "beskrivelse": "Klassike pomfritter med smeltet cheddar.",
-    "billede": "img/cheesefries.jpg"
-  },
-  {
-    "id": 5,
-    "kategori": "Pommes frites",
-    "navn": "Chili fries",
-    "pris": "30 kr.",
-    "beskrivelse": "Regulære pomfritter krydret med mexicansk habanero.",
-    "billede": "img/chili-fries.jpg"
-  },
-  {
-    "id": 6,
-    "kategori": "Burger",
-    "navn": "Hamburger",
-    "pris": "60 kr.",
-    "beskrivelse": "Klassisk hamburger med bøf, salat, tomat.",
-    "billede": "img/hamburger.jpg"
-  },
-  {
-    "id": 7,
-    "kategori": "Burger",
-    "navn": "Cheeseburger",
-    "pris": "65 kr.",
-    "beskrivelse": "Cheeseburger med lækker sweizisk cheddar ost.",
-    "billede": "img/cheesebiur.jpg"
-  },
-  {
-    "id": 8,
-    "kategori": "Burger",
-    "navn": "Mexi burger",
-    "pris": "65 kr.",
-    "beskrivelse": "Mexicansk burger for dig der bare ikke kan få det stærkt nok. Krydret med mexicansk habanero.",
-    "billede": "img/mexiburger.jpg"
-  },
-  {
-    "id": 9,
-    "kategori": "Burger",
-    "navn": "Veggie burger",
-    "pris": "60 kr.",
-    "beskrivelse": "100% kødfri vegansk burger, med lækre grøntsager fra årstiderne.",
-    "billede": "img/ultimate-veggie-burger.jpg"
-  },
-  {
-    "id": 10,
-    "kategori": "Burger",
-    "navn": "Dandy's special burger",
-    "pris": "80 kr.",
-    "beskrivelse": "Husets burger med to bøffer, ost, bacon, onion rings og Dandy's special sauce.",
-    "billede": "img/dandy-burger.jpg"
-  },
-  {
-    "id": 11,
-    "kategori": "Milkshakes",
-    "navn": "Vanilla milkshake",
-    "pris": "30 kr.",
-    "beskrivelse": "Lækker vanilje milkshake lavet på dansk produceret is.",
-    "billede": "img/vanilla-milkshake.jpg"
-  },
-  {
-    "id": 12,
-    "kategori": "Milkshakes",
-    "navn": "Chocolate milkshake",
-    "pris": "30 kr.",
-    "beskrivelse": "Lækker chokolade milkshake lavet på dansk produceret is",
-    "billede": "img/chocolate-milkshake.jpg"
-  },
-  {
-    "id": 13,
-    "kategori": "Milkshakes",
-    "navn": "Caramel milkshake",
-    "pris": "30 kr.",
-    "beskrivelse": "Lækker karamel milkshake lavet på dansk produceret is.",
-    "billede": "img/Salted-Caramel-Milkshake.jpg"
-  },
-  {
-    "id": 14,
-    "kategori": "Milkshakes",
-    "navn": "Strawberry milkshake",
-    "pris": "30 kr.",
-    "beskrivelse": "Lækker jordbær milkshake lavet på dansk produceret is.",
-    "billede": "img/strawberry-milkshake.jpg"
-  },
-  {
-    "id": 15,
-    "kategori": "Drinks",
-    "navn": "Soda (50 cl)",
-    "pris": "10 kr.",
-    "beskrivelse": "Coca cola, Pepsi, Fanta og Sprite.",
-    "billede": "img/soda-can.jpg"
-  },
-  {
-    "id": 16,
-    "kategori": "Drinks",
-    "navn": "Water (50 cl)",
-    "pris": "10 kr.",
-    "beskrivelse": "Egekilde.",
-    "billede": "img/egekilde.jpg"
-  },
-  {
-    "id": 17,
-    "kategori": "Drinks",
-    "navn": "Beer (33 cl)",
-    "pris": "10 kr.",
-    "beskrivelse": "Tuborg eller Carsberg.",
-    "billede": "img/tuborg.jpg"
-  },
-  {
-    "id": 18,
-    "kategori": "Drinks",
-    "navn": "Juice (33 cl)",
-    "pris": "10 kr.",
-    "beskrivelse": "Æble, appelsin eller multifrugt.",
-    "billede": "img/juice.jpg"
-  },
-  {
-    "id": 19,
-    "kategori": "Drinks",
-    "navn": "Ice tea (50 cl)",
-    "pris": "15 kr.",
-    "beskrivelse": "Lækker hjemmelavet ice tea med fersken smag.",
-    "billede": "img/icetea.jpg"
-  },
-  {
-    "id": 20,
-    "kategori": "Dip",
-    "navn": "Mayo",
-    "pris": "5 kr.",
-    "beskrivelse": "Lækker hjemmerørt mayonaise.",
-    "billede": "img/mayo.jpg"
-  },
-  {
-    "id": 21,
-    "kategori": "Dip",
-    "navn": "Chilimayo",
-    "pris": "5 kr.",
-    "beskrivelse": "Lækker hjemmerørt mayonaise med et hint af chili.",
-    "billede": "img/chilimayo.jpg"
-  },
-  {
-    "id": 22,
-    "kategori": "Dip",
-    "navn": "Ketchup",
-    "pris": "5 kr.",
-    "beskrivelse": "Heinz ketchup.",
-    "billede": "img/Ketchup.jpg"
-  },
-  {
-    "id": 23,
-    "kategori": "Dip",
-    "navn": "Aioli",
-    "pris": "5 kr.",
-    "beskrivelse": "Cremet fransk importeret aioli.",
-    "billede": "img/creamygarlicaioli.jpg"
-  }
+   {
+      "id":1,
+      "kategori":"Pommes frites",
+      "navn":"Classic fries",
+      "pris":"25 kr.",
+      "beskrivelse":"Friture stegte danske kartofler.",
+      "billede":"img/pommes-frites.jpg"
+   },
+   {
+      "id":2,
+      "kategori":"Pommes frites",
+      "navn":"Sweet potato fries",
+      "pris":"30 kr.",
+      "beskrivelse":"Tyndt skåret fritter af afrikanske søde kartofler.",
+      "billede":"img/sweet-potato-fries.jpg"
+   },
+   {
+      "id":3,
+      "kategori":"Pommes frites",
+      "navn":"Curly fries",
+      "pris":"30 kr.",
+      "beskrivelse":"Lækre curly fries med paprika.",
+      "billede":"img/curly-fries.jpg"
+   },
+   {
+      "id":4,
+      "kategori":"Pommes frites",
+      "navn":"Cheese fries",
+      "pris":"30 kr.",
+      "beskrivelse":"Klassike pomfritter med smeltet cheddar.",
+      "billede":"img/cheesefries.jpg"
+   },
+   {
+      "id":5,
+      "kategori":"Pommes frites",
+      "navn":"Chili fries",
+      "pris":"30 kr.",
+      "beskrivelse":"Regulære pomfritter krydret med mexicansk habanero.",
+      "billede":"img/chili-fries.jpg"
+   },
+   {
+      "id":6,
+      "kategori":"Burger",
+      "navn":"Hamburger",
+      "pris":"60 kr.",
+      "beskrivelse":"Klassisk hamburger med bøf, salat, tomat.",
+      "billede":"img/hamburger.jpg"
+   },
+   {
+      "id":7,
+      "kategori":"Burger",
+      "navn":"Cheeseburger",
+      "pris":"65 kr.",
+      "beskrivelse":"Cheeseburger med lækker sweizisk cheddar ost.",
+      "billede":"img/cheesebiur.jpg"
+   },
+   {
+      "id":8,
+      "kategori":"Burger",
+      "navn":"Mexi burger",
+      "pris":"65 kr.",
+      "beskrivelse":"Mexicansk burger for dig der bare ikke kan få det stærkt nok. Krydret med mexicansk habanero.",
+      "billede":"img/mexiburger.jpg"
+   },
+   {
+      "id":9,
+      "kategori":"Burger",
+      "navn":"Veggie burger",
+      "pris":"60 kr.",
+      "beskrivelse":"100% kødfri vegansk burger, med lækre grøntsager fra årstiderne.",
+      "billede":"img/ultimate-veggie-burger.jpg"
+   },
+   {
+      "id":10,
+      "kategori":"Burger",
+      "navn":"Dandy's special burger",
+      "pris":"80 kr.",
+      "beskrivelse":"Husets burger med to bøffer, ost, bacon, onion rings og Dandy's special sauce.",
+      "billede":"img/dandy-burger.jpg"
+   },
+   {
+      "id":11,
+      "kategori":"Milkshakes",
+      "navn":"Vanilla milkshake",
+      "pris":"30 kr.",
+      "beskrivelse":"Lækker vanilje milkshake lavet på dansk produceret is.",
+      "billede":"img/vanilla-milkshake.jpg"
+   },
+   {
+      "id":12,
+      "kategori":"Milkshakes",
+      "navn":"Chocolate milkshake",
+      "pris":"30 kr.",
+      "beskrivelse":"Lækker chokolade milkshake lavet på dansk produceret is",
+      "billede":"img/chocolate-milkshake.jpg"
+   },
+   {
+      "id":13,
+      "kategori":"Milkshakes",
+      "navn":"Caramel milkshake",
+      "pris":"30 kr.",
+      "beskrivelse":"Lækker karamel milkshake lavet på dansk produceret is.",
+      "billede":"img/Salted-Caramel-Milkshake.jpg"
+   },
+   {
+      "id":14,
+      "kategori":"Milkshakes",
+      "navn":"Strawberry milkshake",
+      "pris":"30 kr.",
+      "beskrivelse":"Lækker jordbær milkshake lavet på dansk produceret is.",
+      "billede":"img/strawberry-milkshake.jpg"
+   },
+   {
+      "id":15,
+      "kategori":"Drinks",
+      "navn":"Soda (50 cl)",
+      "pris":"10 kr.",
+      "beskrivelse":"Coca cola, Pepsi, Fanta og Sprite.",
+      "billede":"img/soda-can.jpg"
+   },
+   {
+      "id":16,
+      "kategori":"Drinks",
+      "navn":"Water (50 cl)",
+      "pris":"10 kr.",
+      "beskrivelse":"Egekilde.",
+      "billede":"img/egekilde.jpg"
+   },
+   {
+      "id":17,
+      "kategori":"Drinks",
+      "navn":"Beer (33 cl)",
+      "pris":"10 kr.",
+      "beskrivelse":"Tuborg eller Carsberg.",
+      "billede":"img/tuborg.jpg"
+   },
+   {
+      "id":18,
+      "kategori":"Drinks",
+      "navn":"Juice (33 cl)",
+      "pris":"10 kr.",
+      "beskrivelse":"Æble, appelsin eller multifrugt.",
+      "billede":"img/juice.jpg"
+   },
+   {
+      "id":19,
+      "kategori":"Drinks",
+      "navn":"Ice tea (50 cl)",
+      "pris":"15 kr.",
+      "beskrivelse":"Lækker hjemmelavet ice tea med fersken smag.",
+      "billede":"img/icetea.jpg"
+   },
+   {
+      "id":20,
+      "kategori":"Dip",
+      "navn":"Mayo",
+      "pris":"5 kr.",
+      "beskrivelse":"Lækker hjemmerørt mayonaise.",
+      "billede":"img/mayo.jpg"
+   },
+   {
+      "id":21,
+      "kategori":"Dip",
+      "navn":"Chilimayo",
+      "pris":"5 kr.",
+      "beskrivelse":"Lækker hjemmerørt mayonaise med et hint af chili.",
+      "billede":"img/chilimayo.jpg"
+   },
+   {
+      "id":22,
+      "kategori":"Dip",
+      "navn":"Ketchup",
+      "pris":"5 kr.",
+      "beskrivelse":"Heinz ketchup.",
+      "billede":"img/Ketchup.jpg"
+   },
+   {
+      "id":23,
+      "kategori":"Dip",
+      "navn":"Aioli",
+      "pris":"5 kr.",
+      "beskrivelse":"Cremet fransk importeret aioli.",
+      "billede":"img/creamygarlicaioli.jpg"
+   }
 ]
