@@ -2,6 +2,10 @@
 <html lang="da">
 
 <head>
+    <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Dandy's Juicy Burger</title>
@@ -11,17 +15,41 @@
             background-color: #FBF7F1;
         }
 
+        h2 {
+            font-family: 'Dosis', sans-serif;
+        }
+
+        p {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .data-beskrivelse {
+            font-family: 'Raleway', sans-serif;
+        }
+
+        .data-pris {
+            font-family: 'Raleway', sans-serif;
+        }
+
         .logo {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             padding-bottom: 5%;
         }
+
         .logo img {
             width: 300px;
-            grid-column: 2/3;
+            grid-column: 2;
+        }
+
+        div.banner {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
         }
 
         .banner {
+            font-family: 'Dosis', sans-serif;
             background-color: #333;
             overflow: hidden;
         }
@@ -63,15 +91,29 @@
             margin: 0 auto;
             display: grid;
             grid-gap: 10px;
-
+            padding: 10%;
         }
-
 
         .mad {
-            background-color: #333;
+            background-color: #FBF7F1;
+            border: 5px solid #333
         }
 
-        @media screen and (max-width: 600px) {
+        #kontakt .sectionwrapper {
+            background-color: #333;
+            padding: 1em;
+        }
+
+        #kontakt .column {
+            margin: 0 auto;
+            max-width: 40em;
+        }
+
+        #kontakt .top {
+            color: #FBF7F1;
+        }
+
+        @media screen and (max-width: 750px) {
             .banner a:not(:first-child) {
                 display: none;
             }
@@ -82,7 +124,7 @@
             }
         }
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 750px) {
             .banner.responsive {
                 position: relative;
             }
@@ -100,32 +142,57 @@
             }
         }
 
+        @media screen and (max-width:435px) {
+            .data-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .logo img {
+            width: 150px;
+            grid-column: 2;
+        }
+        }
 
         @media screen and (min-width:600px) {
-
-
             .data-container {
-                padding: 10%;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
 
+        @media screen and (min-width:900px) {
+            .data-container {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
 
-        @media screen and (min-width:1000px) {}
-
         @media screen and (min-width:1200px) {
+            .logo {
+                padding-left: 5%;
+            }
 
             .data-container {
                 grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media screen and (min-width:1300px) {
+            .logo {
+                padding-left: 5%;
+            }
+        }
+
+        @media screen and (min-width:1500px) {
+            .logo {
+                padding-left: 10%;
             }
         }
     </style>
 </head>
 
 <body>
-    <div class="logo"><img src="img/logo.png" alt="logo">
-    </div>
-
+    <a href="index.html">
+        <div class="logo"><img src="img/logo.png" alt="logo">
+        </div>
+    </a>
 
     <div class="banner" id="myBanner">
         <a href="index.html" class="active">Hjem</a>
@@ -149,9 +216,41 @@
             <img src="" alt="">
             <h2></h2><br>
             <div class="data-beskrivelse"></div><br>
-            Pris: <div class="data-pris"></div><br>
+            <p>Pris:</p>
+            <div class="data-pris"></div><br>
         </article>
     </template>
+
+    <section id="kontakt">
+
+        <div class="sectionwrapper">
+            <div class="column">
+                <div class="top">
+                    <h2>Kontakt</h2>
+                    <p>Du er altid velkommen til at kontakte os og spørge ind til vores menu, så vil vi</p>
+                    <p>bestræbe på at besvare dig efter bedste evne.</p>
+                    <br>
+                    <p>Du er altid velkommen i vores lille biks i hjertet af København. </p>
+                    <br>
+                    <p>Telefon: 12 34 56 78</p>
+                    <p>Email: dandys@gmail.com</p>
+                    <p>Adresse: Burgergade 12 - 1118 kbh.</p>
+                    <br>
+
+                    <div class="bottom">
+                        <a href="https://www.facebook.com/dandys/">
+                            <img src="img/facebooklogo.jpg" alt="faceebook logo">
+                        </a>
+                        <a href="https://www.instagram.com/dandys/">
+                            <img src="img/instalogo.jpg" alt="Instagram logo">
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script>
         let dest = document.querySelector(".data-container");
