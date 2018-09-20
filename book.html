@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 
 <head>
     <link href="https://fonts.googleapis.com/css?family=Dosis|Raleway" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <title>Dandy's Juicy Burger</title>
     <style>
         body {
@@ -14,12 +14,12 @@
             background-color: #FBF7F1;
         }
 
-        p{
-            font-family: 'Raleway', sans-serif;
+        h2 {
+            font-family: 'Dosis', sans-serif;
         }
 
-        h2{
-            font-family: 'Dosis', sans-serif;
+        p {
+            font-family: 'Raleway', sans-serif;
         }
 
         .data-beskrivelse {
@@ -27,10 +27,6 @@
         }
 
         .data-pris {
-            font-family: 'Raleway', sans-serif;
-        }
-
-        .data-kategori {
             font-family: 'Raleway', sans-serif;
         }
 
@@ -42,7 +38,7 @@
 
         .logo img {
             width: 300px;
-            grid-column: 2/3;
+            grid-column: 2;
         }
 
         div.banner {
@@ -116,23 +112,6 @@
             color: #FBF7F1;
         }
 
-        @media screen and (max-width:435px) {
-            .logo img {
-            width: 150px;
-            grid-column: 2;
-        }
-        }
-
-        @media screen and (min-width:600px) {
-
-            .data-container {
-                padding-left: 10%;
-                padding-right: 10%;
-                grid-gap: 5px;
-
-            }
-        }
-
         @media screen and (max-width: 930px) {
             .banner a:not(:first-child) {
                 display: none;
@@ -161,9 +140,36 @@
                 text-align: left;
             }
         }
+
+        @media screen and (max-width:435px) {
+            .data-container {
+                grid-template-columns: repeat(1, 1fr);
+            }
+            .logo img {
+            width: 150px;
+            grid-column: 2;
+        }
+        }
+
+        @media screen and (min-width:600px) {
+            .data-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (min-width:900px) {
+            .data-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         @media screen and (min-width:1200px) {
             .logo {
                 padding-left: 5%;
+            }
+
+            .data-container {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
@@ -178,7 +184,6 @@
                 padding-left: 10%;
             }
         }
-
     </style>
 </head>
 
@@ -187,7 +192,6 @@
         <div class="logo"><img src="img/logo.png" alt="logo">
         </div>
     </a>
-
 
     <div class="banner" id="myBanner">
         <a href="index.html" class="active">Hjem</a>
@@ -206,16 +210,17 @@
     </div>
 
     <main class="container">
-        <section class="data-container">
-            <article class="mad">
-                <img src="" alt="">
-                <h2></h2><br>
-                <p>Kategori:</p> <div class="data-kategori"></div><br>
-                <div class="data-beskrivelse"></div><br>
-                <p>Pris:</p> <div class="data-pris"></div><br>
-            </article>
-        </section>
+        <section class="data-container"></section>
     </main>
+    <template class="data-template">
+        <article class="mad">
+            <img src="" alt="">
+            <h2></h2><br>
+            <div class="data-beskrivelse"></div><br>
+            <p>Pris:</p>
+            <div class="data-pris"></div><br>
+        </article>
+    </template>
 
     <section id="kontakt">
 
@@ -249,11 +254,24 @@
     </section>
 
     <script>
-        let urlParams = new URLSearchParams(window.location.search);
-        let id = urlParams.get("id");
-        console.log(id)
+
+
+        let person = prompt("Hvor mange personer ønsker du at booke bord til?");
+
+        let tid = prompt("Hvornår ønsker i" + " " + person + " " + "bordet klar? (skriv dato + klokkeslæt)");
+
+
+        if (person && tid) {
+            alert("Vi har modtaget din booking på " + person + " personer til " + tid);
+        } else {
+            alert("Der skete en fejl og der blev ikke booket bord");
+        }
+
+
+
         let dest = document.querySelector(".data-container");
-        let maden;
+        let mad;
+        let madFilter = "alle";
         document.addEventListener("DOMContentLoaded", hentJson);
 
         function bannerFunction() {
@@ -267,30 +285,42 @@
 
         async function hentJson() {
             let myJson = await fetch("dandymenu.json");
-            maden = await myJson.json();
+            mad = await myJson.json();
+            visMad();
+        }
+
+        document.querySelectorAll(".menu-item").forEach(knap => {
+            knap.addEventListener("click", filtrering)
+        });
+
+        function filtrering() {
+            dest.textContent = "";
+            madFilter = this.getAttribute("data-kategori");
             visMad();
         }
 
         function visMad() {
-            let dest = document.querySelector(".data-container");
-
+            let dest = document.querySelector(".data-container"),
+                temp = document.querySelector(".data-template");
             //løb personlisten igennem og lav en klon
-            maden.forEach(mad => {
-                if (mad.id == id) {
-
+            mad.forEach(mad => {
+                if (mad.kategori == madFilter || madFilter == "alle") {
+                    let klon = temp.cloneNode(true).content;
                     //indsæt data i klonen
-                    dest.querySelector("h2").textContent = mad.navn;
-                    dest.querySelector("img").src = mad.billede;
-                    dest.querySelector(".data-kategori").textContent = mad.kategori;
-                    dest.querySelector(".data-beskrivelse").textContent = mad.beskrivelse;
-                    dest.querySelector(".data-pris").textContent = mad.pris;
+                    klon.querySelector("h2").textContent = mad.navn;
+                    klon.querySelector("img").src = mad.billede;
+                    klon.querySelector("img").addEventListener("click", () => {
+                        window.location.href = "single.html?id=" + mad.id;
+                    });
+                    klon.querySelector(".data-beskrivelse").textContent = mad.beskrivelse;
+                    klon.querySelector(".data-pris").textContent = mad.pris;
                     //placer klon i DOM
-
+                    dest.appendChild(klon);
                 }
-            });
+            })
         }
-
     </script>
 </body>
 
 </html>
+
